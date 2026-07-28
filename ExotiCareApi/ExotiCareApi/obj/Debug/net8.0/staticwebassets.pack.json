@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\wwwroot\\uploads\\280a6ae0-5c83-4f20-baeb-d139fd42cec9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\280a6ae0-5c83-4f20-baeb-d139fd42cec9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\wwwroot\\uploads\\7f5c69a6-5991-497e-9c6e-cbcc402ddaa2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7f5c69a6-5991-497e-9c6e-cbcc402ddaa2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\wwwroot\\uploads\\cf850fdc-25ed-4e33-a7bb-6039b7990faf.webp",
+      "PackagePath": "staticwebassets\\uploads\\cf850fdc-25ed-4e33-a7bb-6039b7990faf.webp"
+    },
+    {
+      "Id": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\wwwroot\\uploads\\e9ae35d0-8d22-4c24-946f-37b17011b849.jpg",
+      "PackagePath": "staticwebassets\\uploads\\e9ae35d0-8d22-4c24-946f-37b17011b849.jpg"
+    },
+    {
+      "Id": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\wwwroot\\uploads\\f5fa44fb-7eac-4250-bf35-1e2a16dd2099.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f5fa44fb-7eac-4250-bf35-1e2a16dd2099.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ExotiCareApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ExotiCareApi.props",
+      "PackagePath": "build\\ExotiCareApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ExotiCareApi.props",
+      "PackagePath": "buildMultiTargeting\\ExotiCareApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ExotiCareApi.props",
+      "PackagePath": "buildTransitive\\ExotiCareApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

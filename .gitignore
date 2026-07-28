@@ -1,0 +1,22 @@
+# Visual Studio
+.vs/
+**/bin/
+**/obj/
+
+# Flutter
+**/.dart_tool/
+**/build/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.pub-cache/
+
+# IDE
+.idea/
+.vscode/
+
+# System
+Thumbs.db
+Desktop.ini
+
+# Logi
+*.log

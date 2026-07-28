@@ -1,0 +1,473 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\services\\paypalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\services\\paypalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\dtos\\paypalorderresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\dtos\\paypalorderresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\dtos\\capturepaymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\dtos\\capturepaymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\dtos\\createpaymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\dtos\\createpaymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\exoticareapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\exoticareapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\dtos\\createorderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\dtos\\createorderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\models\\updateorderstatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\models\\updateorderstatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\dtos\\updateprofilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\dtos\\updateprofilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\models\\productcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\models\\productcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\controllers\\favoritescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\controllers\\favoritescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\models\\favorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\models\\favorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|c:\\users\\dubie\\desktop\\studia\\praca inz\\exoticareapi\\exoticareapi\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D1462CB-3EF6-4908-80AC-335BEDBD916D}|ExotiCareApi\\ExotiCareApi.csproj|solutionrelative:exoticareapi\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 345,
+          "SelectedChildIndex": 21,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PayPalOrderResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\PayPalOrderResponseDto.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\DTOs\\PayPalOrderResponseDto.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\PayPalOrderResponseDto.cs",
+              "RelativeToolTip": "ExotiCareApi\\DTOs\\PayPalOrderResponseDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T11:45:47.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CapturePaymentDto.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\CapturePaymentDto.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\DTOs\\CapturePaymentDto.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\CapturePaymentDto.cs",
+              "RelativeToolTip": "ExotiCareApi\\DTOs\\CapturePaymentDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T11:43:01.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreatePaymentDto.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\CreatePaymentDto.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\DTOs\\CreatePaymentDto.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\CreatePaymentDto.cs",
+              "RelativeToolTip": "ExotiCareApi\\DTOs\\CreatePaymentDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T11:39:29.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaymentsController.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\PaymentsController.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Controllers\\PaymentsController.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\PaymentsController.cs",
+              "RelativeToolTip": "ExotiCareApi\\Controllers\\PaymentsController.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAwDsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T11:36:13.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PayPalService.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Services\\PayPalService.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Services\\PayPalService.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Services\\PayPalService.cs",
+              "RelativeToolTip": "ExotiCareApi\\Services\\PayPalService.cs",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAswJMAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T11:33:00.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ExotiCareApi",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\ExotiCareApi.csproj",
+              "RelativeDocumentMoniker": "ExotiCareApi\\ExotiCareApi.csproj",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\ExotiCareApi.csproj",
+              "RelativeToolTip": "ExotiCareApi\\ExotiCareApi.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-27T11:30:36.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UpdateOrderStatusDto.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\UpdateOrderStatusDto.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Models\\UpdateOrderStatusDto.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\UpdateOrderStatusDto.cs",
+              "RelativeToolTip": "ExotiCareApi\\Models\\UpdateOrderStatusDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T16:46:51.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProductCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\ProductCreateDto.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Models\\ProductCreateDto.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\ProductCreateDto.cs",
+              "RelativeToolTip": "ExotiCareApi\\Models\\ProductCreateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T12:43:02.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReviewsController.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\ReviewsController.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Controllers\\ReviewsController.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\ReviewsController.cs",
+              "RelativeToolTip": "ExotiCareApi\\Controllers\\ReviewsController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAA8wB0AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T19:51:15.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Models\\Review.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\Review.cs",
+              "RelativeToolTip": "ExotiCareApi\\Models\\Review.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAgwBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T19:50:41.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FavoritesController.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\FavoritesController.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Controllers\\FavoritesController.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\FavoritesController.cs",
+              "RelativeToolTip": "ExotiCareApi\\Controllers\\FavoritesController.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAUwGoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T19:11:48.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Favorite.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\Favorite.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Models\\Favorite.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\Favorite.cs",
+              "RelativeToolTip": "ExotiCareApi\\Models\\Favorite.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T19:10:58.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "ExotiCareApi\\Controllers\\OrdersController.cs",
+              "ViewState": "AQIAAPsAAAAAAAAAAAAAwBQBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T16:51:42.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CreateOrderDto.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\CreateOrderDto.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\DTOs\\CreateOrderDto.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\CreateOrderDto.cs",
+              "RelativeToolTip": "ExotiCareApi\\DTOs\\CreateOrderDto.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAkwBEAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T16:50:48.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\OrderItem.cs",
+              "RelativeToolTip": "ExotiCareApi\\Models\\OrderItem.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAowA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T16:48:21.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\Order.cs",
+              "RelativeToolTip": "ExotiCareApi\\Models\\Order.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAkwB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T16:47:43.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UpdateProfileRequest.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\UpdateProfileRequest.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\DTOs\\UpdateProfileRequest.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\UpdateProfileRequest.cs",
+              "RelativeToolTip": "ExotiCareApi\\DTOs\\UpdateProfileRequest.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwA4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T16:05:54.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\User.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\User.cs",
+              "RelativeToolTip": "ExotiCareApi\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T16:14:12.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "ExotiCareApi\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T16:02:10.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "ExotiCareApi\\Controllers\\ProductsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T15:23:17.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Models\\Product.cs",
+              "RelativeToolTip": "ExotiCareApi\\Models\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T15:22:31.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\DTOs\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\DTOs\\LoginRequest.cs",
+              "RelativeToolTip": "ExotiCareApi\\DTOs\\LoginRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T17:45:02.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ExotiCareApi\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAkwCkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-06T16:50:36.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ExotiCareApi\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAEwF8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T16:34:01.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Program.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Program.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Program.cs",
+              "RelativeToolTip": "ExotiCareApi\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T16:11:07.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\appsettings.json",
+              "RelativeDocumentMoniker": "ExotiCareApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\appsettings.json",
+              "RelativeToolTip": "ExotiCareApi\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-06T16:32:18.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "ExotiCareApi\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\dubie\\Desktop\\Studia\\Praca Inz\\ExotiCareApi\\ExotiCareApi\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "ExotiCareApi\\Data\\AppDbContext.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T16:32:10.882Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

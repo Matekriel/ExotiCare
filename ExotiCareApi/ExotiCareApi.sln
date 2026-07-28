@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExotiCareApi", "ExotiCareApi\ExotiCareApi.csproj", "{5D1462CB-3EF6-4908-80AC-335BEDBD916D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D1462CB-3EF6-4908-80AC-335BEDBD916D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D1462CB-3EF6-4908-80AC-335BEDBD916D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D1462CB-3EF6-4908-80AC-335BEDBD916D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D1462CB-3EF6-4908-80AC-335BEDBD916D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B6AA2A3-00D7-4154-986C-0E6621A6D8C5}
+	EndGlobalSection
+EndGlobal
