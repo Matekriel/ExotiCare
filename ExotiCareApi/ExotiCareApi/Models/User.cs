@@ -15,5 +15,6 @@
         public string? PostalCode { get; set; }
         public string? City { get; set; }
         public string Role { get; set; } = "User";
+        public string? ProfileImageUrl { get; set; }
     }
 }

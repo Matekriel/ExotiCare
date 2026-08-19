@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("d26d4d14-9b97-4077-9c42-1bb24659eaad")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExotiCareApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42db6d531d50943cba2acf54df274c9a71734a95")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExotiCareApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExotiCareApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

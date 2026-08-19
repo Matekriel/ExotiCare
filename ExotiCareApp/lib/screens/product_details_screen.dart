@@ -194,28 +194,20 @@ void initState() {
 
             Container(
               width: double.infinity,
-              height: 300,
-
-              color: Colors.white,
-
+              height: 280,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+              ),
               child: Padding(
-                padding: const EdgeInsets.all(20),
-
+                padding: const EdgeInsets.all(16),
                 child: Image.network(
                   widget.image,
-
                   fit: BoxFit.contain,
-
-                  errorBuilder:
-                      (
-                        context,
-                        error,
-                        stackTrace,
-                      ) {
-
-                    return const Icon(
-                      Icons.image,
-                      size: 100,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Icon(
+                      Icons.image_outlined,
+                      size: 90,
+                      color: Colors.grey.shade400,
                     );
                   },
                 ),
@@ -244,145 +236,185 @@ void initState() {
                   const SizedBox(height: 15),
 
                   Text(
-                    widget.price,
+                    "${widget.price} zł",
 
                     style: const TextStyle(
                       fontSize: 30,
                       color: Colors.green,
-                      fontWeight:
-                          FontWeight.bold,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
 
                   const SizedBox(height: 20),
 
                   Row(
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedTab = 0;
+                            });
+                          },
+                          child: AnimatedContainer(
+                            duration: const Duration(milliseconds: 200),
+                            padding: const EdgeInsets.symmetric(vertical: 14),
+                            decoration: BoxDecoration(
+                              color: selectedTab == 0
+                                  ? Colors.green
+                                  : Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: selectedTab == 0
+                                    ? Colors.green
+                                    : Colors.grey.shade300,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.description_outlined,
+                                  size: 20,
+                                  color: selectedTab == 0
+                                      ? Colors.white
+                                      : Colors.grey.shade700,
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  "Opis",
+                                  style: TextStyle(
+                                    color: selectedTab == 0
+                                        ? Colors.white
+                                        : Colors.grey.shade800,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
 
-  children: [
+                      const SizedBox(width: 10),
 
-    Expanded(
-      child: GestureDetector(
-
-        onTap: () {
-
-          setState(() {
-
-            selectedTab = 0;
-          });
-        },
-
-        child: Container(
-
-          padding:
-              const EdgeInsets.symmetric(
-            vertical: 14,
-          ),
-
-          decoration: BoxDecoration(
-
-            color:
-                selectedTab == 0
-                    ? Colors.green
-                    : Colors.white,
-
-            borderRadius:
-                BorderRadius.circular(
-              12,
-            ),
-          ),
-
-          child: Center(
-
-            child: Text(
-
-              "Opis",
-
-              style: TextStyle(
-
-                color:
-                    selectedTab == 0
-                        ? Colors.white
-                        : Colors.black,
-
-                fontWeight:
-                    FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-      ),
-    ),
-
-    const SizedBox(width: 10),
-
-    Expanded(
-      child: GestureDetector(
-
-        onTap: () {
-
-          setState(() {
-
-            selectedTab = 1;
-          });
-        },
-
-        child: Container(
-
-          padding:
-              const EdgeInsets.symmetric(
-            vertical: 14,
-          ),
-
-          decoration: BoxDecoration(
-
-            color:
-                selectedTab == 1
-                    ? Colors.green
-                    : Colors.white,
-
-            borderRadius:
-                BorderRadius.circular(
-              12,
-            ),
-          ),
-
-          child: Center(
-
-            child: Text(
-
-              "Opinie",
-
-              style: TextStyle(
-
-                color:
-                    selectedTab == 1
-                        ? Colors.white
-                        : Colors.black,
-
-                fontWeight:
-                    FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-      ),
-    ),
-  ],
-),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedTab = 1;
+                            });
+                          },
+                          child: AnimatedContainer(
+                            duration: const Duration(milliseconds: 200),
+                            padding: const EdgeInsets.symmetric(vertical: 14),
+                            decoration: BoxDecoration(
+                              color: selectedTab == 1
+                                  ? Colors.green
+                                  : Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: selectedTab == 1
+                                    ? Colors.green
+                                    : Colors.grey.shade300,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.star_outline,
+                                  size: 20,
+                                  color: selectedTab == 1
+                                      ? Colors.white
+                                      : Colors.grey.shade700,
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  "Opinie",
+                                  style: TextStyle(
+                                    color: selectedTab == 1
+                                        ? Colors.white
+                                        : Colors.grey.shade800,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
 
 const SizedBox(height: 20),
 
 selectedTab == 0
+    ? Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(18),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 8,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  width: 42,
+                  height: 42,
+                  decoration: BoxDecoration(
+                    color: Colors.green.withOpacity(0.12),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Icon(
+                    Icons.description_outlined,
+                    color: Colors.green,
+                    size: 24,
+                  ),
+                ),
 
-? Text(
+                const SizedBox(width: 12),
 
-  widget.description,
+                const Text(
+                  "Opis produktu",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
 
-  style: const TextStyle(
-    fontSize: 16,
-    height: 1.5,
-  ),
-)
+            const SizedBox(height: 16),
+
+            Container(
+              height: 1,
+              color: Colors.grey.shade200,
+            ),
+
+            const SizedBox(height: 16),
+
+            Text(
+              widget.description,
+              style: TextStyle(
+                fontSize: 16,
+                height: 1.6,
+                color: Colors.grey.shade800,
+              ),
+            ),
+          ],
+        ),
+      )
 
 : isLoadingReviews
 
@@ -629,35 +661,27 @@ selectedTab == 0
                   SizedBox(
                     width: double.infinity,
                     height: 55,
-
-                    child: ElevatedButton(
-
-                      style:
-                          ElevatedButton.styleFrom(
-                        backgroundColor:
-                            Colors.green,
-
-                        foregroundColor:
-                            Colors.white,
-
-                        shape:
-                            RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(
-                            14,
-                          ),
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        foregroundColor: Colors.white,
+                        elevation: 2,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
                         ),
                       ),
-
-                      onPressed: () {},
-
-                      child: const Text(
+                      onPressed: () {
+                        // tutaj obecna logika dodawania do koszyka
+                      },
+                      icon: const Icon(
+                        Icons.shopping_cart_outlined,
+                        size: 22,
+                      ),
+                      label: const Text(
                         "Dodaj do koszyka",
-
                         style: TextStyle(
                           fontSize: 18,
-                          fontWeight:
-                              FontWeight.bold,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),

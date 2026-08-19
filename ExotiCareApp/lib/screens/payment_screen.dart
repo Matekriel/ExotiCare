@@ -6,6 +6,10 @@ import '../data/cart_data.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:app_links/app_links.dart';
 import 'dart:async';
+import '../models/parcel_locker.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+import 'parcel_locker_map_screen.dart';
 
 class PaymentScreen extends StatefulWidget {
 
@@ -26,19 +30,26 @@ class _PaymentScreenState extends State<PaymentScreen> {
   void initState() {
     super.initState();
 
+    _loadParcelLockers();
+
     _appLinks = AppLinks();
 
     _linkSubscription = _appLinks.uriLinkStream.listen((uri) async {
 
       if (uri.scheme != "exoticcare") return;
-      if (uri.host != "paypal") return;
 
-      if (uri.path == "/success") {
+      if (uri.host == "paypal" && uri.path == "/success") {
 
-        print("SUCCESS");
+        print("PAYPAL SUCCESS");
 
         await _capturePayPalOrder();
+      }
 
+      if (uri.host == "payu" && uri.path == "/success") {
+
+        print("PAYU SUCCESS");
+
+        await _saveOrder();
       }
 
     });
@@ -58,6 +69,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
   StreamSubscription<Uri>? _linkSubscription;
 
   String? _paypalOrderId;
+  String? _payuOrderId;
+  List<ParcelLocker> parcelLockers = [];
+
+  ParcelLocker? selectedLocker;
 
   String selectedDelivery =
     "Paczkomat";
@@ -71,6 +86,31 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   return widget.totalPrice +
       deliveryPrice;
+}
+
+Future<void> _loadParcelLockers() async {
+
+  final response = await http.get(
+    Uri.parse("http://10.0.2.2:5138/api/ParcelLockers"),
+  );
+
+  if (response.statusCode == 200) {
+
+    final List data = jsonDecode(response.body);
+
+    setState(() {
+
+      parcelLockers =
+          data.map((e) => ParcelLocker.fromJson(e)).toList();
+
+    });
+
+  } else {
+
+    print("Błąd pobierania Punktów Odbioru");
+
+  }
+  print("Pobrano ${parcelLockers.length} Punktów Odbioru");
 }
 
 Future<void> _saveOrder() async {
@@ -199,6 +239,44 @@ Future<void> _payWithPayPal() async {
   await launchUrl(
     uri,
     mode: LaunchMode.externalApplication,
+  );
+}
+
+Future<void> _payWithPayU() async {
+
+  final response = await http.post(
+
+    Uri.parse(
+      "http://10.0.2.2:5138/api/Payments/payu/create-order",
+    ),
+
+    headers: {
+      "Content-Type": "application/json",
+    },
+
+    body: jsonEncode({
+      "amount": finalPrice,
+    }),
+  );
+
+  if (response.statusCode != 200) {
+
+    print(response.body);
+    return;
+  }
+
+  final data = jsonDecode(response.body);
+
+  _payuOrderId = data["orderId"];
+
+  final redirectUrl = data["redirectUri"];
+
+  await launchUrl(
+
+    Uri.parse(redirectUrl),
+
+    mode: LaunchMode.externalApplication,
+
   );
 }
 
@@ -605,11 +683,105 @@ Future<void> _capturePayPalOrder() async {
 const SizedBox(height: 18),
 
 deliveryTile(
-  title: "Paczkomat",
+  title: "Punkt odbioru",
   subtitle: "Dostawa jutro",
   price: 12.99,
   icon: Icons.inventory_2,
 ),
+
+if (selectedDelivery == "Punkt odbioru")
+  Container(
+    margin: const EdgeInsets.only(bottom: 15),
+    padding: const EdgeInsets.all(18),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(18),
+      border: Border.all(color: Colors.grey.shade300),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+
+        if (selectedLocker == null)
+          const Text(
+            "Nie wybrano punktu odbioru",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+
+        if (selectedLocker != null) ...[
+          Text(
+            selectedLocker!.name,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 17,
+            ),
+          ),
+
+          const SizedBox(height: 4),
+
+          Text(selectedLocker!.city),
+
+          Text(selectedLocker!.street),
+        ],
+
+        const SizedBox(height: 15),
+
+        SizedBox(
+          width: double.infinity,
+          height: 52,
+          child: OutlinedButton.icon(
+            icon: const Icon(
+              Icons.map_outlined,
+              size: 22,
+            ),
+
+            label: Text(
+              selectedLocker == null
+                  ? "Wybierz na mapie"
+                  : "Zmień punkt",
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.green,
+              backgroundColor: Colors.green[50],
+              side: const BorderSide(
+                color: Colors.green,
+                width: 1.5,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14),
+              ),
+            ),
+
+            onPressed: () async {
+              final locker =
+                  await Navigator.push<ParcelLocker>(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => ParcelLockerMapScreen(
+                    parcelLockers: parcelLockers,
+                  ),
+                ),
+              );
+
+              if (locker != null) {
+                setState(() {
+                  selectedLocker = locker;
+                });
+              }
+            },
+          ),
+        ),
+      ],
+    ),
+  ),
 
 deliveryTile(
   title: "Kurier",
@@ -640,23 +812,18 @@ const SizedBox(height: 30),
             const SizedBox(height: 18),
 
             paymentTile(
-              title: "BLIK",
-              icon: Icons.flash_on,
-            ),
-
-            paymentTile(
-              title: "Karta płatnicza",
-              icon: Icons.credit_card,
-            ),
-
-            paymentTile(
               title: "PayPal",
               icon: Icons.account_balance_wallet,
             ),
 
             paymentTile(
-              title: "Przelew online",
+              title: "PayU",
               icon: Icons.account_balance,
+            ),
+
+            paymentTile(
+              title: "Płatność przy odbiorze",
+              icon: Icons.credit_card,
             ),
 
             const SizedBox(height: 24),
@@ -799,9 +966,19 @@ const SizedBox(height: 30),
 
                 onPressed: () async {
                   if (selectedPayment == "PayPal") {
+
                     await _payWithPayPal();
-                  } else {
+
+                  }
+                  else if (selectedPayment == "PayU") {
+
+                    await _payWithPayU();
+
+                  }
+                  else {
+
                     await _saveOrder();
+
                   }
                 },
 

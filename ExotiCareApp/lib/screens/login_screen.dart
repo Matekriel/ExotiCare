@@ -4,6 +4,7 @@ import 'register_screen.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'forgot_password_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -281,16 +282,14 @@ const SizedBox(height: 25),
               ),
 
               TextButton(
-
                 onPressed: () {
 
-                  ScaffoldMessenger.of(
+                  Navigator.push(
                     context,
-                  ).showSnackBar(
-                    const SnackBar(
-                      content: Text(
-                        "Funkcja resetu hasła będzie dostępna później",
-                      ),
+
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          const ForgotPasswordScreen(),
                     ),
                   );
                 },

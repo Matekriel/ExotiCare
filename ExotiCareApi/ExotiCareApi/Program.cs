@@ -3,14 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using ExotiCareApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-
 using System.Text;
+using ExoticCareAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<PayPalService>();
+builder.Services.AddScoped<PayUService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -57,6 +58,8 @@ builder.Services
                     )
             };
     });
+
+builder.Services.AddScoped<EmailService>();
 
 var app = builder.Build();
 

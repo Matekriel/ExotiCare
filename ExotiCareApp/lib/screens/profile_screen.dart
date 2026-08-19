@@ -19,7 +19,18 @@ class _ProfileScreenState
     extends State<ProfileScreen> {  
 
       Map? user;
-bool isLoading = true;
+      bool isLoading = true;
+
+      String? getProfileImageUrl() {
+  final imageUrl = user?["profileImageUrl"];
+
+  if (imageUrl == null ||
+      imageUrl.toString().isEmpty) {
+    return null;
+  }
+
+  return "http://10.0.2.2:5138$imageUrl";
+}
 
 @override
 void initState() {
@@ -99,70 +110,73 @@ if (isLoading) {
             const SizedBox(height: 20),
 
             Container(
-  width: double.infinity,
-  padding: const EdgeInsets.symmetric(
-    vertical: 30,
-    horizontal: 20,
-  ),
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(
+                vertical: 30,
+                horizontal: 20,
+              ),
 
-  decoration: BoxDecoration(
+              decoration: BoxDecoration(
 
-    gradient: const LinearGradient(
-      colors: [
-        Color.fromARGB(255, 76, 175, 80),
-        Color.fromARGB(255, 76, 175, 80),
-      ],
-    ),
+                gradient: const LinearGradient(
+                  colors: [
+                    Color.fromARGB(255, 76, 175, 80),
+                    Color.fromARGB(255, 76, 175, 80),
+                  ],
+                ),
 
-    borderRadius:
-        BorderRadius.circular(25),
+                borderRadius:
+                    BorderRadius.circular(25),
 
-    boxShadow: const [
-      BoxShadow(
-        color: Colors.black12,
-        blurRadius: 15,
-        offset: Offset(0, 5),
-      ),
-    ],
-  ),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 15,
+                    offset: Offset(0, 5),
+                  ),
+                ],
+              ),
 
-  child: Column(
-    children: [
+              child: Column(
+                children: [
 
-      const CircleAvatar(
-        radius: 55,
-        backgroundColor:
-            Colors.white,
+                  CircleAvatar(
+                    radius: 55,
+                    backgroundColor: Colors.white,
+                    backgroundImage: getProfileImageUrl() != null
+                        ? NetworkImage(getProfileImageUrl()!)
+                        : null,
+                    child: getProfileImageUrl() == null
+                        ? const Icon(
+                            Icons.person,
+                            size: 55,
+                            color: Colors.green,
+                          )
+                        : null,
+                  ),
 
-        child: Icon(
-          Icons.person,
-          size: 55,
-          color: Colors.green,
-        ),
-      ),
+                  const SizedBox(height: 15),
 
-      const SizedBox(height: 15),
+                  Text(
+                    user?["username"] ?? "",
+                    style: const TextStyle(
+                      fontSize: 26,
+                      color: Colors.white,
+                      fontWeight:
+                          FontWeight.bold,
+                    ),
+                  ),
 
-      Text(
-        user?["username"] ?? "",
-        style: const TextStyle(
-          fontSize: 26,
-          color: Colors.white,
-          fontWeight:
-              FontWeight.bold,
-        ),
-      ),
-
-      Text(
-        user?["email"] ?? "",
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 16,
-        ),
-      ),
-    ],
-  ),
-),
+                  Text(
+                    user?["email"] ?? "",
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             const SizedBox(height: 40),
 
             const Align(
@@ -265,7 +279,7 @@ const SizedBox(height: 15),
                   );
 
                   if (result == true) {
-                    fetchUser();
+                    await fetchUser();
                   }
                 },
 

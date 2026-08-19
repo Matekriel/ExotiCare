@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 
 class EditProfileScreen extends StatefulWidget {
 
@@ -19,6 +21,10 @@ class EditProfileScreen extends StatefulWidget {
 
 class _EditProfileScreenState
     extends State<EditProfileScreen> {
+
+  File? _selectedImage;
+  String? _profileImageUrl;
+  bool _isUploadingImage = false;
 
   final firstNameController =
       TextEditingController();
@@ -59,15 +65,48 @@ class _EditProfileScreenState
 
     cityController.text =
         widget.user["city"] ?? "";
+
+    _profileImageUrl =
+      widget.user["profileImageUrl"];
+  }
+
+  Future<void> _pickProfileImage() async {
+    final picker = ImagePicker();
+
+    final XFile? image = await picker.pickImage(
+      source: ImageSource.gallery,
+      imageQuality: 80,
+      maxWidth: 800,
+      maxHeight: 800,
+    );
+
+    if (image == null) {
+      return;
+    }
+
+    setState(() {
+      _selectedImage = File(image.path);
+    });
   }
 
   Future<void> saveProfile() async {
 
-    final prefs =
-        await SharedPreferences.getInstance();
+    final prefs = await SharedPreferences.getInstance();
 
-    final token =
-        prefs.getString("token");
+    final token = prefs.getString("token");
+
+    final imageUploaded = await _uploadProfileImage();
+
+    if (!imageUploaded) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            "Nie udało się zapisać zdjęcia profilowego",
+          ),
+        ),
+      );
+      return;
+    }
 
     final response = await http.put(
 
@@ -76,11 +115,8 @@ class _EditProfileScreenState
       ),
 
       headers: {
-        "Content-Type":
-            "application/json",
-
-        "Authorization":
-            "Bearer $token",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer $token",
       },
 
       body: jsonEncode({
@@ -111,6 +147,74 @@ class _EditProfileScreenState
         context,
         true,
       );
+
+    } else {
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            "Nie udało się zapisać zmian",
+          ),
+        ),
+      );
+    }
+  }
+
+  Future<bool> _uploadProfileImage() async {
+    if (_selectedImage == null) {
+      return true;
+    }
+
+    setState(() {
+      _isUploadingImage = true;
+    });
+
+    try {
+      final prefs =
+          await SharedPreferences.getInstance();
+
+      final token =
+          prefs.getString("token");
+
+      final request = http.MultipartRequest(
+        "POST",
+        Uri.parse(
+          "http://10.0.2.2:5138/api/Users/${widget.user["id"]}/profile-image",
+        ),
+      );
+
+      request.headers["Authorization"] =
+          "Bearer $token";
+
+      request.files.add(
+        await http.MultipartFile.fromPath(
+          "image",
+          _selectedImage!.path,
+        ),
+      );
+
+      final response =
+          await request.send();
+
+      if (response.statusCode == 200) {
+
+        setState(() {
+          _selectedImage = null;
+        });
+
+        return true;
+      }
+
+      return false;
+
+    } catch (e) {
+      print(e);
+      return false;
+
+    } finally {
+      setState(() {
+        _isUploadingImage = false;
+      });
     }
   }
 
@@ -165,15 +269,59 @@ class _EditProfileScreenState
   child: Column(
     children: [
 
-      const CircleAvatar(
-        radius: 45,
-        backgroundColor:
-            Colors.white,
+      GestureDetector(
+        onTap: _pickProfileImage,
+        child: Stack(
+          children: [
 
-        child: Icon(
-          Icons.person,
-          size: 45,
-          color: Colors.green,
+            CircleAvatar(
+              radius: 50,
+              backgroundColor: Colors.white,
+
+              backgroundImage: _selectedImage != null
+                  ? FileImage(_selectedImage!)
+                  : (_profileImageUrl != null &&
+                          _profileImageUrl!.isNotEmpty
+                      ? NetworkImage(
+                          "http://10.0.2.2:5138${_profileImageUrl!}",
+                        )
+                      : null),
+
+              child: _selectedImage == null &&
+                      (_profileImageUrl == null ||
+                          _profileImageUrl!.isEmpty)
+                  ? const Icon(
+                      Icons.person,
+                      size: 50,
+                      color: Colors.green,
+                    )
+                  : null,
+            ),
+
+            Positioned(
+              right: 0,
+              bottom: 0,
+              child: Container(
+                width: 32,
+                height: 32,
+
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.green,
+                    width: 2,
+                  ),
+                ),
+
+                child: const Icon(
+                  Icons.camera_alt,
+                  size: 17,
+                  color: Colors.green,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
 
@@ -368,36 +516,39 @@ const SizedBox(height: 25),
               height: 55,
 
               child: ElevatedButton.icon(
-                icon: const Icon(Icons.save),
+                icon: Icon(
+                  _isUploadingImage
+                      ? Icons.hourglass_empty
+                      : Icons.save,
+                ),
 
-                onPressed: saveProfile,
+                onPressed: _isUploadingImage
+                    ? null
+                    : saveProfile,
 
-                style:
-                    ElevatedButton.styleFrom(
-                  backgroundColor:
-                      Colors.green,
-
-                  foregroundColor:
-                      Colors.white,
-
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  disabledBackgroundColor: Colors.green.shade300,
+                  disabledForegroundColor: Colors.white,
                   elevation: 4,
 
-                  shape:
-                      RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.circular(18),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18),
                   ),
                 ),
 
-                label: const Text(
-                  "Zapisz zmiany",
-                  style: TextStyle(
+                label: Text(
+                  _isUploadingImage
+                      ? "Zapisywanie..."
+                      : "Zapisz zmiany",
+
+                  style: const TextStyle(
                     fontSize: 16,
-                    fontWeight:
-                        FontWeight.bold,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              )
+              ),
             ),
           ],
         ),

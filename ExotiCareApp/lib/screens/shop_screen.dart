@@ -34,6 +34,9 @@ class _ShopScreenState
 
     String selectedCategory = "Wszystkie";
     bool onlyAvailable = false;
+    double? minPrice;
+    double? maxPrice;
+    String searchQuery = "";
 
     final List<String> categories = [
       "Wszystkie",
@@ -47,21 +50,43 @@ class _ShopScreenState
     ];
 
     void applyFilters() {
-
       filteredProducts = originalProducts.where((product) {
 
-        bool categoryMatch =
-            selectedCategory == "Wszystkie"
-                ? true
-                : product.category == selectedCategory;
+        // Wyszukiwanie
+        final searchMatch =
+            searchQuery.isEmpty ||
+            product.name
+                .toLowerCase()
+                .contains(searchQuery.toLowerCase());
 
-        bool stockMatch =
+        // Kategoria
+        final categoryMatch =
+            selectedCategory == "Wszystkie" ||
+            product.category == selectedCategory;
+
+        // Dostępność
+        final stockMatch =
             !onlyAvailable || product.stock > 0;
 
-        return categoryMatch && stockMatch;
+        // Cena minimalna
+        final minPriceMatch =
+            minPrice == null ||
+            product.price >= minPrice!;
+
+        // Cena maksymalna
+        final maxPriceMatch =
+            maxPrice == null ||
+            product.price <= maxPrice!;
+
+        return searchMatch &&
+            categoryMatch &&
+            stockMatch &&
+            minPriceMatch &&
+            maxPriceMatch;
 
       }).toList();
 
+      // Sortowanie
       if (selectedSort == "Od najniższej ceny") {
 
         filteredProducts.sort(
@@ -265,16 +290,10 @@ void searchProducts(String query) {
 
   setState(() {
 
-    filteredProducts =
-        products.where((product) {
+    searchQuery = query.trim();
 
-      return product.name
-          .toLowerCase()
-          .contains(
-            query.toLowerCase(),
-          );
+    applyFilters();
 
-    }).toList();
   });
 }
 
@@ -344,54 +363,205 @@ void showFilters() {
 
 void showAvailabilityFilters() {
 
+  final minPriceController = TextEditingController(
+    text: minPrice?.toString() ?? "",
+  );
+
+  final maxPriceController = TextEditingController(
+    text: maxPrice?.toString() ?? "",
+  );
+
   showModalBottomSheet(
-
     context: context,
-
+    isScrollControlled: true,
     builder: (context) {
 
       return StatefulBuilder(
-
         builder: (context, setModalState) {
 
-          return Column(
+          return Padding(
+            padding: EdgeInsets.only(
+              left: 20,
+              right: 20,
+              top: 15,
+              bottom: MediaQuery.of(context).viewInsets.bottom + 20,
+            ),
 
-            mainAxisSize: MainAxisSize.min,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
 
-            children: [
+              children: [
 
-              const SizedBox(height: 10),
-
-              const Text(
-                "Filtry",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                const Text(
+                  "Filtry",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
 
-              SwitchListTile(
+                const SizedBox(height: 20),
 
-                title: const Text(
-                  "Tylko dostępne produkty",
+                SwitchListTile(
+                  contentPadding: EdgeInsets.zero,
+
+                  title: const Text(
+                    "Tylko dostępne produkty",
+                  ),
+
+                  value: onlyAvailable,
+
+                  onChanged: (value) {
+
+                    setModalState(() {
+                      onlyAvailable = value;
+                    });
+                  },
                 ),
 
-                value: onlyAvailable,
+                const SizedBox(height: 15),
 
-                onChanged: (value) {
+                const Align(
+                  alignment: Alignment.centerLeft,
 
-                  setModalState(() {
-                    onlyAvailable = value;
-                  });
+                  child: Text(
+                    "Zakres cenowy",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
 
-                  setState(() {
-                    applyFilters();
-                  });
-                },
-              ),
+                const SizedBox(height: 10),
 
-              const SizedBox(height: 15),
-            ],
+                Row(
+                  children: [
+
+                    Expanded(
+                      child: TextField(
+                        controller: minPriceController,
+
+                        keyboardType:
+                            const TextInputType.numberWithOptions(
+                          decimal: true,
+                        ),
+
+                        decoration: InputDecoration(
+                          labelText: "Cena od",
+                          suffixText: "zł",
+                          border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.circular(12),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(width: 12),
+
+                    Expanded(
+                      child: TextField(
+                        controller: maxPriceController,
+
+                        keyboardType:
+                            const TextInputType.numberWithOptions(
+                          decimal: true,
+                        ),
+
+                        decoration: InputDecoration(
+                          labelText: "Cena do",
+                          suffixText: "zł",
+                          border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.circular(12),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 20),
+
+                SizedBox(
+                  width: double.infinity,
+
+                  child: ElevatedButton(
+                    onPressed: () {
+
+                      final min =
+                          double.tryParse(
+                        minPriceController.text
+                            .replaceAll(',', '.'),
+                      );
+
+                      final max =
+                          double.tryParse(
+                        maxPriceController.text
+                            .replaceAll(',', '.'),
+                      );
+
+                      setState(() {
+
+                        minPrice = min;
+                        maxPrice = max;
+
+                        applyFilters();
+                      });
+
+                      Navigator.pop(context);
+                    },
+
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
+
+                      padding:
+                          const EdgeInsets.symmetric(
+                        vertical: 14,
+                      ),
+
+                      shape:
+                          RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(12),
+                      ),
+                    ),
+
+                    child: const Text(
+                      "Zastosuj filtry",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 8),
+
+                TextButton(
+                  onPressed: () {
+
+                    setState(() {
+
+                      onlyAvailable = false;
+                      minPrice = null;
+                      maxPrice = null;
+
+                      applyFilters();
+                    });
+
+                    Navigator.pop(context);
+                  },
+
+                  child: const Text(
+                    "Wyczyść filtry",
+                  ),
+                ),
+              ],
+            ),
           );
         },
       );
@@ -467,7 +637,7 @@ void showAvailabilityFilters() {
         ),
       ),
 
-      backgroundColor: Colors.grey[100],
+      backgroundColor: const Color(0xFFF8F8F8),
 
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -486,9 +656,13 @@ void showAvailabilityFilters() {
           },
         ),
 
-        title: const Text("Sklep"),
+        title: const Text("Sklep", style: TextStyle(fontWeight: FontWeight.w600,),),
+
+        backgroundColor: const Color(0xFFF8F3FB),
 
         elevation: 0,
+
+        scrolledUnderElevation: 0,
 
         actions: [
 
@@ -599,31 +773,32 @@ if (result == true) {
                 const EdgeInsets.all(12),
 
             child: Container(
-              height: 50,
+              height: 52,
 
               decoration: BoxDecoration(
                 color: Colors.white,
-
-                borderRadius:
-                    BorderRadius.circular(14),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04),
+                blurRadius: 8,
+                offset: const Offset(0, 2),),],
               ),
 
               child: TextField(
                 onChanged: searchProducts,
 
                 decoration: InputDecoration(
-                  hintText:
-                      "Szukaj produktów...",
+                  hintText: "Szukaj produktów...",
+                  hintStyle: TextStyle(color: Colors.grey.shade500,),
 
                   border: InputBorder.none,
 
                   prefixIcon: Icon(
                     Icons.search,
+                    color: Colors.grey,
                   ),
 
-                  contentPadding:
-                      EdgeInsets.symmetric(
-                    vertical: 14,
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 15,
                   ),
                 ),
               ),
@@ -654,34 +829,56 @@ if (result == true) {
                       children: [
 
                         Expanded(
-                          child: ElevatedButton.icon(
-
-                          onPressed: showFilters,
-
-                          icon: const Icon(Icons.tune),
-
-                          label: const Text("Sortuj"),
-
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(
-                              120,
-                              56,
+                          child: OutlinedButton.icon(
+                            onPressed: showFilters,
+                            icon: const Icon(
+                              Icons.tune,
+                              size: 20,
+                            ),
+                            label: const Text(
+                              "Sortuj",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            style: OutlinedButton.styleFrom(
+                              minimumSize: const Size(120, 52),
+                              foregroundColor: Colors.green,
+                              side: const BorderSide(
+                                color: Colors.green,
+                                width: 1.5,
+                              ),
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14),
+                              ),
                             ),
                           ),
                         ),
-                        ),
                         const SizedBox(width: 10),
                         Expanded(
-                          child: ElevatedButton.icon(
+                          child: OutlinedButton.icon(
                             onPressed: showAvailabilityFilters,
                             icon: const Icon(
                               Icons.filter_alt_outlined,
+                              size: 20,
                             ),
-                            label: const Text("Filtry"),
-                            style: ElevatedButton.styleFrom(
-                              minimumSize: const Size(
-                                120,
-                                56,
+                            label: const Text(
+                              "Filtry",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            style: OutlinedButton.styleFrom(
+                              minimumSize: const Size(120, 52),
+                              foregroundColor: Colors.green,
+                              side: const BorderSide(
+                                color: Colors.green,
+                                width: 1.5,
+                              ),
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14),
                               ),
                             ),
                           ),
@@ -837,8 +1034,9 @@ class _ProductCardState
   },
 
   child: Card(
-      elevation: 6,
-      shadowColor: Colors.black26,
+      elevation: 2,
+      shadowColor: Colors.black12,
+      color: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius:
             BorderRadius.circular(18),
@@ -857,14 +1055,13 @@ class _ProductCardState
           children: [
 
             Container(
-              width: 120,
-              height: 140,
+              width: 110,
+              height: 125,
 
               decoration: BoxDecoration(
-                color: Colors.grey[200],
+                color: const Color(0xFFF5F5F5),
 
-                borderRadius:
-                    BorderRadius.circular(14),
+                borderRadius: BorderRadius.circular(14),
               ),
 
               child: Padding(
@@ -873,6 +1070,7 @@ class _ProductCardState
 
                 child: Image.network(
                   widget.image,
+                  fit: BoxFit.contain,
 
                   errorBuilder:
                       (
@@ -1116,25 +1314,17 @@ const Text(
 
                     child: ElevatedButton(
 
-                      style:
-                          ElevatedButton.styleFrom(
-                        backgroundColor:
-                            Colors.green,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
 
-                        foregroundColor:
-                            Colors.white,
+                        foregroundColor: Colors.white,
 
                         padding:
                             const EdgeInsets.symmetric(
                           vertical: 14,
                         ),
 
-                        shape:
-                            RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(
-                            12,
-                          ),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14),
                         ),
                       ),
 
@@ -1165,8 +1355,19 @@ const Text(
                         );
                       },
 
-                      child: const Text(
-                        "Dodaj do koszyka",
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.shopping_cart_outlined),
+                          SizedBox(width: 8),
+                          Text(
+                            "Dodaj do koszyka",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
